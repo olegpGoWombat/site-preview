@@ -10,7 +10,7 @@ import "./style.css"
 
 const TestimonialsCarousel = () => {
   return (
-    <Carousel showArrows={false} showThumbs={false}>
+    <Carousel swipeable showArrows={false} showThumbs={false}>
       <div className={styles["testimonialsCard"]}>
         <div className={styles["testimonialsStar"]}>
           <TestimonialsStarIcon />
