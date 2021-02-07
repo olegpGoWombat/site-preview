@@ -1,0 +1,20 @@
+:root {
+  /* colors */
+  --color-dark: hsl(191deg, 30%, 14%, 1);
+  --color-green-1: hsl(190deg, 77%, 22%, 1);
+  --color-green-2: hsl(189deg, 77%, 31%, 1);
+  --color-green-3: hsl(185deg, 32%, 46%, 1);
+  --color-green-4: hsl(175deg, 31%, 67%, 1);
+  --color-green-5: hsl(185deg, 55%, 96%, 1);
+  --color-orange: hsl(8deg, 63%, 57%, 1);
+  --color-white: hsl(0deg, 0%, 100%, 1);
+  --bg-light-blue: hsl(185deg, 55%, 96%, 1);
+
+  /* gradients */
+  --gradient-green: linear-gradient(
+    90deg,
+    var(--color-green-1) 0%,
+    var(--color-green-2) 100%
+  );
+  /* --gradient-black-to-green: linear-gradient(90deg, #18292d 0%, #0d5563 100%); */
+}

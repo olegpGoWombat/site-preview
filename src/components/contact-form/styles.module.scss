@@ -1,0 +1,41 @@
+.contactForm {
+  text-align: center;
+
+  input {
+    display: block;
+    width: 100%;
+    background-color: hsl(191deg, 32%, 33%, 1);
+    box-shadow: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 16px 24px;
+    margin-bottom: 24px;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+
+    &::placeholder {
+      color: hsl(191deg, 24%, 62%, 1);
+    }
+
+    &:focus,
+    &:active {
+      background-color: hsl(191deg, 32%, 33%, 1);
+      border-radius: 4px;
+      outline: none;
+      border: 1px solid hsl(0deg, 0%, 100%, 0.5);
+    }
+  }
+
+  button {
+    min-width: 240px;
+    margin-top: 24px;
+    color: var(--color-green-2);
+    background-color: #fff;
+
+    &:hover {
+      background-color: var(--color-green-2);
+      color: white;
+    }
+  }
+}

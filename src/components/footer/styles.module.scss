@@ -1,0 +1,117 @@
+.footer {
+  padding: 50px 20px 32px;
+  background-color: hsl(191deg, 25%, 10%, 1);
+  color: white;
+
+  svg:first-child {
+    flex-shrink: 0;
+  }
+
+  p {
+    margin: 32px 0 40px;
+    color: hsl(227deg, 5%, 62%, 1);
+    font-size: 14px;
+    line-height: 18px;
+    text-align: left;
+  }
+
+  a {
+    color: white;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: var(--color-green-4);
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.icons {
+  display: flex;
+
+  a {
+    transition: opacity 0.2s ease;
+    margin-left: 20px;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 56px;
+}
+
+.menu {
+  width: auto;
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  a {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    display: inline-block;
+    margin-top: 24px;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:hover {
+      border-bottom: 1px solid transparent;
+    }
+  }
+}
+
+.contacts {
+  span {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 500;
+  }
+
+  .email {
+    margin-bottom: 48px;
+  }
+
+  .phone {
+    div {
+      height: 23px;
+      display: flex;
+      align-items: center;
+
+      & + div {
+        margin-top: 20px;
+      }
+
+      span {
+        margin-left: 14px;
+      }
+    }
+  }
+}
+
+p.copywright {
+  margin: 0;
+  text-align: center;
+  color: hsl(195deg, 8%, 32%, 1);
+}

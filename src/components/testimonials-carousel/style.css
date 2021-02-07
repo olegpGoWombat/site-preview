@@ -1,0 +1,36 @@
+.carousel.carousel-slider {
+  border-radius: 8px;
+}
+
+.slide {
+  background-color: transparent !important;
+  text-align: left !important;
+  padding: 0 20px !important;
+}
+
+.control-dots {
+  position: static !important;
+  margin-top: 40px !important;
+}
+
+.control-dots .dot {
+  width: 12px !important;
+  height: 8px !important;
+  background-color: var(--color-green-4) !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  border-radius: 4px !important;
+  transition: all 0.5s ease !important;
+  opacity: 0.6 !important;
+  margin: 0 12px !important;
+}
+
+.control-dots .dot.selected {
+  opacity: 1 !important;
+  width: 48px !important;
+}
+
+.carousel-status {
+  display: none;
+}
