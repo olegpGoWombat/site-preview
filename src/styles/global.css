@@ -29,6 +29,12 @@ code {
     monospace;
 }
 
+.wrapper {
+  min-width: 320px;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
 button {
   background-color: #fff;
   height: 60px;
@@ -41,6 +47,11 @@ button {
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.2s ease;
+  color: var(--color-green-2);
+}
+button:hover {
+  color: white;
+  background-color: hsl(188deg, 53%, 42%, 1);
 }
 
 img {
