@@ -17,6 +17,7 @@ import GoodFirmIcon from "../assets/svg/good-firms.svg"
 import UpWorkIcon from "../assets/svg/upwork.svg"
 import ClutchIcon from "../assets/svg/clutch.svg"
 import CoffeeIcon from "../assets/svg/coffee.svg"
+import ArrowRightIcon from "../assets/svg/arrow-right.svg"
 
 import Timeline from "../assets/images/About-timeline.png"
 import BlogPostImage from "../assets/images/blogpost-image.jpg"
@@ -33,197 +34,233 @@ const IndexPage = () => {
   return (
     <div className={styles.main}>
       <div className={styles["welcome"]}>
-        <Header />
+        <div className="wrapper">
+          <Header />
 
-        <h1>Lorem ipsum amet, consectetur adipiscing</h1>
-        <p>Leo cursus enim luctus praesent ut ut nunc magna.</p>
-        <button type="button" onClick={() => {}}>
-          Static text
-        </button>
+          <h1>Lorem ipsum amet, consectetur adipiscing</h1>
+          <p>Leo cursus enim luctus praesent ut ut nunc magna.</p>
+
+          <button type="button" onClick={() => {}}>
+            Static text
+          </button>
+        </div>
       </div>
 
       <div className={styles["different"]}>
-        <h2>Why we are different</h2>
-        <p>
-          We work directly in client’s repo and deliver the codebase immediately
-        </p>
+        <div className={styles.differentContainer}>
+          <div className="wrapper">
+            <div className={styles.differentTitle}>
+              <h2>Why we are different</h2>
+              <p>
+                We work directly in client’s repo and deliver the codebase
+                immediately
+              </p>
 
-        <ul>
-          <li>
-            Your offer will reach the one who needs you. Without chatbots, call
-            center and briefings
-          </li>
-          <li>
-            We don’t just blindly execute. We come up with solid plans that fit
-            your concept
-          </li>
-          <li>R&D Staff: master’s degrees</li>
-          <li>We don’t hide our devs</li>
-          <li>
-            We prefer meeting clients offline: we can visit you and you’re
-            welcome to visit us
-          </li>
-        </ul>
+              <button type="button">
+                <ArrowRightIcon />
+              </button>
+            </div>
+
+            <ul>
+              <li>
+                Your offer will reach the one who needs you. Without chatbots,
+                call center and briefings
+              </li>
+              <li>
+                We don’t just blindly execute. We come up with solid plans that
+                fit your concept
+              </li>
+              <li>R&D Staff: master’s degrees</li>
+              <li>We don’t hide our devs</li>
+              <li>
+                We prefer meeting clients offline: we can visit you and you’re
+                welcome to visit us
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <div className={styles["services"]}>
-        <h2>Services</h2>
+        <div className="wrapper">
+          <h2>Services</h2>
 
-        <div className={styles["service"]}>
-          <div>
-            <WebDevIcon />
+          <div className={styles["servicesContainer"]}>
+            <div className={styles["service"]}>
+              <div>
+                <WebDevIcon />
+              </div>
+              <span>Web applications development</span>
+            </div>
+            <div className={styles["service"]}>
+              <div>
+                <MobileDevIcon />
+              </div>
+              <span>Mobile applications development</span>
+            </div>
+            <div className={styles["service"]}>
+              <div>
+                <SystemsIcon />
+              </div>
+              <span>CRM/ERP/SCADA systems</span>
+            </div>
+            <div className={styles["service"]}>
+              <div>
+                <MlIcon />
+              </div>
+              <span>Machine Learning, Computer Vision, loT</span>
+            </div>
+            <div className={styles["service"]}>
+              <div>
+                <SupportIcon />
+              </div>
+              <span>Project maintenance and support</span>
+            </div>
           </div>
-          <span>Web applications development</span>
-        </div>
-        <div className={styles["service"]}>
-          <div>
-            <MobileDevIcon />
-          </div>
-          <span>Mobile applications development</span>
-        </div>
-        <div className={styles["service"]}>
-          <div>
-            <SystemsIcon />
-          </div>
-          <span>CRM/ERP/SCADA systems</span>
-        </div>
-        <div className={styles["service"]}>
-          <div>
-            <MlIcon />
-          </div>
-          <span>Machine Learning, Computer Vision and loT</span>
-        </div>
-        <div className={styles["service"]}>
-          <div>
-            <SupportIcon />
-          </div>
-          <span>Project maintenance and support</span>
         </div>
       </div>
 
       <div className={styles["techstack"]}>
-        <h2>We think with</h2>
+        <div className="wrapper">
+          <h2>We think with</h2>
 
-        <div>
-          <PythonIcon />
-          <h4>Python +text Python is the new sexy.</h4>
-          <p>
-            We will make your project using technologies in which the core team
-            has 10+ years of experience.
-          </p>
-        </div>
+          <div className={styles.technologies}>
+            <div className={styles.technology}>
+              <PythonIcon />
+              <h4>Python +text Python is the new sexy.</h4>
+              <p>
+                We will make your project using technologies in which the core
+                team has 10+ years of experience.
+              </p>
+            </div>
 
-        <div>
-          <DjangoIcon />
-          <h4>Python +text Python is the new sexy.</h4>
-          <p>
-            We will make your project using technologies in which the core team
-            has 10+ years of experience.
-          </p>
-        </div>
+            <div className={styles.technology}>
+              <DjangoIcon />
+              <h4>Python +text Python is the new sexy.</h4>
+              <p>
+                We will make your project using technologies in which the core
+                team has 10+ years of experience.
+              </p>
+            </div>
 
-        <div>
-          <JsIcon />
-          <h4>JavaScript</h4>
-        </div>
+            <div className={styles.technology}>
+              <JsIcon />
+              <h4>JavaScript</h4>
+            </div>
 
-        <div>
-          <ReactIcon />
-          <h4>React</h4>
-        </div>
+            <div className={styles.technology}>
+              <ReactIcon />
+              <h4>React</h4>
+            </div>
 
-        <div>
-          <ReactNativeIcon />
-          <h4>React Native</h4>
+            <div className={styles.technology}>
+              <ReactNativeIcon />
+              <h4>React Native</h4>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className={styles["advice"]}>
-        <div>
-          <h2>
-            Your project can be
-            <br />
-            deployed to
-          </h2>
+        <div className="wrapper">
+          <div className={styles.adviceContainer}>
+            <h2>
+              Your project can be
+              <br />
+              deployed to
+            </h2>
 
-          <p>Other services...</p>
-          <button type="button">Need an advice?</button>
+            <button type="button">Need an advice?</button>
+          </div>
         </div>
       </div>
 
       <div className={styles["expertise"]}>
-        <h2>Our Expertise</h2>
-        <h4>Industries we rock but not limited, open for new challenges</h4>
-        <p>
-          Over many years of working with different businesses, we realized that
-          they have a lot in common
-        </p>
-
-        <ExpertiseCarousel />
-
-        <h2>Having a business in another field?</h2>
-        <h4>We're always open to smth new.</h4>
-        <p>We know how to dig deep. Let our expertise help your business</p>
-
-        <div className={styles["cardWombat"]}>
+        <div className="wrapper">
+          <h2>Our Expertise</h2>
+          <h4>Industries we rock but not limited, open for new challenges</h4>
           <p>
-            You might even be surprised with how well our experience is a great
-            fit for any type of business even if we haven’t
-            <br />
-            worked with yet.
+            Over many years of working with different businesses, we realized
+            that they have a lot in common
           </p>
-          <span>
-            Anyways, we love new
-            <br />
-            challenges.
-          </span>
-        </div>
 
-        <button>Let's rock together</button>
+          <ExpertiseCarousel />
+
+          <div className={styles.anotherBusiness}>
+            <div className={styles.anotherBusinessTitle}>
+              <h2>Having a business in another field?</h2>
+              <h4>We're always open to smth new.</h4>
+              <p>
+                We know how to dig deep. Let our expertise help your business
+              </p>
+            </div>
+
+            <div className={styles["cardWombat"]}>
+              <p>
+                You might even be surprised with how well our experience is a
+                great fit for any type of business even if we haven’t worked
+                with yet.
+              </p>
+              <span>Anyways, we love new challenges.</span>
+            </div>
+
+            <button>Let's rock together</button>
+          </div>
+        </div>
       </div>
 
       <div className={styles["about"]}>
-        <h2>About company</h2>
-        <img src={Timeline} alt="timeline" />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque iaculis
-          non interdum praesent fames turpis elit proin. Sagittis mauris et odio
-          elit. Consectetur pretium, felis praesent sit. Eleifend viverra
-          tristique interdum viverra lobortis. Fermentum varius odio nunc ut
-          sapien sit parturient id. In sed tempus nibh in vitae libero. Amet,
-          vel vitae ut id augue pharetra aliquet.
-        </p>
-        <button>More about Wombats</button>
+        <div className="wrapper">
+          <h2>About company</h2>
+          <img src={Timeline} alt="timeline" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
+            iaculis non interdum praesent fames turpis elit proin. Sagittis
+            mauris et odio elit. Consectetur pretium, felis praesent sit.
+            Eleifend viverra tristique interdum viverra lobortis. Fermentum
+            varius odio nunc ut sapien sit parturient id. In sed tempus nibh in
+            vitae libero. Amet, vel vitae ut id augue pharetra aliquet.
+          </p>
+          <button>More about Wombats</button>
+        </div>
       </div>
 
       <div className={styles["rdteam"]}>
-        <h2>Test the might of our R&D team</h2>
-        <p>
-          We are not afraid of delicate, fragile, or even projects you deem
-          extraordinary using AI and other cutting-edge technologies.
-        </p>
-        <p>
-          Additionally we have an R&D department that can help you realize your
-          bold ideas using state-of-the-art technologies. We have experience
-          with computer vision, deep learning algorithms, Internet of Things and
-          always happy to learn something new.
-        </p>
+        <div className={`wrapper ${styles.rdteamContainer}`}>
+          <div className={styles.rdteamTitle}>
+            <h2>Test the might of our R&D team</h2>
+            <p>
+              We are not afraid of delicate, fragile, or even projects you deem
+              extraordinary using AI and other cutting-edge technologies.
+            </p>
+            <p>
+              Additionally we have an R&D department that can help you realize
+              your bold ideas using state-of-the-art technologies. We have
+              experience with computer vision, deep learning algorithms,
+              Internet of Things and always happy to learn something new.
+            </p>
 
-        <div className={styles["ideaCard"]}>
-          <h3>Computer vision</h3>
-          <ArrowIcon />
-        </div>
-        <div className={styles["ideaCard"]}>
-          <h3>Data science</h3>
-          <ArrowIcon />
-        </div>
-        <div className={styles["ideaCard"]}>
-          <h3>Machine Learning</h3>
-          <ArrowIcon />
-        </div>
-        <div className={styles["ideaCard"]}>
-          <h3>ETL pipelines</h3>
-          <ArrowIcon />
+            <button type="button">Talk to our R&D Lead</button>
+          </div>
+
+          <div className={styles.ideaCards}>
+            <div className={styles["ideaCard"]}>
+              <h3>Computer vision</h3>
+              <ArrowIcon />
+            </div>
+            <div className={styles["ideaCard"]}>
+              <h3>Data science</h3>
+              <ArrowIcon />
+            </div>
+            <div className={styles["ideaCard"]}>
+              <h3>Machine Learning</h3>
+              <ArrowIcon />
+            </div>
+            <div className={styles["ideaCard"]}>
+              <h3>ETL pipelines</h3>
+              <ArrowIcon />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -274,8 +311,7 @@ const IndexPage = () => {
           <p>We still believe that offline meetings matter</p>
           <div>
             <h2>
-              Have you ever seen a<br />
-              real wombat?
+              Have you ever seen a real wombat?
               <br />
               <span>Let’s meet!</span>
             </h2>

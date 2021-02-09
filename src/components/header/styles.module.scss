@@ -1,10 +1,85 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  position: relative;
 }
 
-.icon {
+.logo {
+  margin-right: 160px;
+}
+
+.navLinks {
+  display: none;
+
+  @media screen and (min-width: 1024px) {
+    display: block;
+  }
+}
+
+.contactsBtn {
+  display: none;
+  margin-left: 200px;
+  background-color: hsl(8deg, 60%, 56%, 1);
+  color: white;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 32px;
+  font-size: 16px;
+
+  &:hover {
+    color: hsl(8deg, 60%, 56%, 1);
+    background-color: white;
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: block;
+  }
+}
+
+.headerLinks {
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  display: inline-block;
+  color: hsl(184deg, 30%, 54%, 1);
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: 80px;
+
+  &:hover {
+    color: white;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin-top: 10px;
+      background-color: white;
+    }
+  }
+
+  &Active {
+    display: inline-block;
+    color: white;
+    // border-bottom: 1px solid white;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin-top: 10px;
+      background-color: white;
+    }
+  }
+}
+
+.email {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,11 +87,66 @@
   height: 44px;
   background-color: #fff;
   border-radius: 50%;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 50px;
+  }
 }
 
 .menu {
+  position: absolute;
+  top: 0px;
+  right: 0px;
   display: flex;
+  margin-right: auto;
+  align-items: flex-start;
+  // flex-grow: 1;
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: column-reverse;
+    flex-direction: row-reverse;
+  }
+}
+
+.menuIcons {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    right: 0;
+    flex-direction: column-reverse;
+    margin-top: 140px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 176px;
+  }
+}
+
+.socialIcons {
+  display: none;
+
+  & > a {
+    cursor: pointer;
+    margin-bottom: 40px;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .hamburger {
@@ -28,4 +158,8 @@
   background: none;
   outline: none;
   cursor: pointer;
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
 }
