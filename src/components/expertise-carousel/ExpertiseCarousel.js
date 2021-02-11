@@ -35,10 +35,6 @@ const ExpertiseCarousel = () => {
           <span>Manufacturing & Logistics</span>
           <img src={expertise1} width="140" alt="exp1" />
         </div>
-        <div className={styles["expertiseItem"]}>
-          <span>Manufacturing & Logistics</span>
-          <img src={expertise1} width="140" alt="exp1" />
-        </div>
       </Carousel>
     </div>
   )

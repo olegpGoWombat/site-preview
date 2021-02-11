@@ -1,11 +1,23 @@
 .carousel.carousel-slider {
-  border-radius: 8px;
+  /* border-radius: 8px; */
+}
+
+.slider {
+  /* transform: translateX(-320px) !important; */
+}
+
+.carousel .slide {
+  /* min-width: 100% !important; */
+
+  margin: 0 32px;
 }
 
 .slide {
+  /* min-width: initial !important; */
+
   background-color: transparent !important;
   text-align: left !important;
-  padding: 0 20px !important;
+  /* padding: 0 32px !important; */
 }
 
 .control-dots {
@@ -34,3 +46,9 @@
 .carousel-status {
   display: none;
 }
+
+/* @media screen and (min-width: 576px) {
+  .carousel .slide {
+    min-width: initial !important;
+  }
+} */

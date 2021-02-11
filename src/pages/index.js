@@ -21,6 +21,7 @@ import ArrowRightIcon from "../assets/svg/arrow-right.svg"
 
 import Timeline from "../assets/images/About-timeline.png"
 import BlogPostImage from "../assets/images/blogpost-image.jpg"
+import AboutImgPlaceholder from "../assets/images/about-img-placeholder.png"
 
 // components
 import Header from "../components/header"
@@ -211,17 +212,24 @@ const IndexPage = () => {
 
       <div className={styles["about"]}>
         <div className="wrapper">
-          <h2>About company</h2>
-          <img src={Timeline} alt="timeline" />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
-            iaculis non interdum praesent fames turpis elit proin. Sagittis
-            mauris et odio elit. Consectetur pretium, felis praesent sit.
-            Eleifend viverra tristique interdum viverra lobortis. Fermentum
-            varius odio nunc ut sapien sit parturient id. In sed tempus nibh in
-            vitae libero. Amet, vel vitae ut id augue pharetra aliquet.
-          </p>
-          <button>More about Wombats</button>
+          <div className={styles.aboutContainer}>
+            <div className={styles.aboutPhotoContainer}>
+              <img src={AboutImgPlaceholder} alt="about" />
+            </div>
+            <div className={styles.aboutTextContainer}>
+              <h2>About company</h2>
+              <img src={Timeline} alt="timeline" />
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
+                iaculis non interdum praesent fames turpis elit proin. Sagittis
+                mauris et odio elit. Consectetur pretium, felis praesent sit.
+                Eleifend viverra tristique interdum viverra lobortis. Fermentum
+                varius odio nunc ut sapien sit parturient id. In sed tempus nibh
+                in vitae libero. Amet, vel vitae ut id augue pharetra aliquet.
+              </p>
+              <button>More about Wombats</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -265,117 +273,137 @@ const IndexPage = () => {
       </div>
 
       <div className={styles["awards"]}>
-        <h2>Our Awards and benefits</h2>
+        <div className="wrapper">
+          <h2>Our Awards and benefits</h2>
 
-        <div className={styles["awardItem"]}>
-          <GoodFirmIcon />
+          <div className={styles.awardItems}>
+            <div className={styles["awardItem"]}>
+              <GoodFirmIcon />
 
-          <div>
-            <h4>GoodFirms</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
-              commodo est molestie bibendum.
-            </p>
-          </div>
-        </div>
-        <div className={styles["awardItem"]}>
-          <UpWorkIcon />
+              <div>
+                <h4>GoodFirms</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Volutpat commodo est molestie bibendum.
+                </p>
+              </div>
+            </div>
+            <div className={styles["awardItem"]}>
+              <UpWorkIcon />
 
-          <div>
-            <h4>Upwork top Rated +</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
-              commodo est molestie bibendum.
-            </p>
-          </div>
-        </div>
-        <div className={styles["awardItem"]}>
-          <ClutchIcon />
+              <div>
+                <h4>Upwork top Rated +</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Volutpat commodo est molestie bibendum.
+                </p>
+              </div>
+            </div>
+            <div className={styles["awardItem"]}>
+              <ClutchIcon />
 
-          <div>
-            <h4>Clutch Leader Awards</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
-              commodo est molestie bibendum.
-            </p>
+              <div>
+                <h4>Clutch Leader Awards</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Volutpat commodo est molestie bibendum.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div className={styles["meetUs"]}>
-        <div className={styles["meetPhoto"]}>
-          <div>
-            <CoffeeIcon />
+        <div className="wrapper">
+          <div className={styles["meetPhoto"]}>
+            <div>
+              <CoffeeIcon />
+            </div>
+            <h3>Meet us</h3>
+            <p>We still believe that offline meetings matter</p>
+            <div className={styles.meetUsContent}>
+              <h2>
+                Have you ever seen a real wombat?
+                <br />
+                <span>Let’s meet!</span>
+              </h2>
+              <p className={styles["meetText"]}>
+                It is pretty easy to meet us as we are ready to get on a plane.
+                Also, our cozy office is always open for a cup of coffee or a
+                hard-working meeting.
+              </p>
+              <p className={styles["meetText"]}>
+                And the most important thing is that you can meet our partner
+                locally. Again, we still believe in offline meetings.
+              </p>
+              <div className={styles.meetUsButtons}>
+                <button>Book a meeting</button>
+                <button>Become a local partner</button>
+              </div>
+            </div>
           </div>
-          <h3>Meet us</h3>
-          <p>We still believe that offline meetings matter</p>
-          <div>
-            <h2>
-              Have you ever seen a real wombat?
-              <br />
-              <span>Let’s meet!</span>
-            </h2>
-            <p className={styles["meetText"]}>
-              It is pretty easy to meet us as we are ready to get on a plane.
-              Also, our cozy office is always open for a cup of coffee or a
-              hard-working meeting.
-            </p>
-            <p className={styles["meetText"]}>
-              And the most important thing is that you can meet our partner
-              locally. Again, we still believe in offline meetings.
-            </p>
-            <button>Book a meeting</button>
-            <button>Become a local partner</button>
-          </div>
-        </div>
-        <div className={styles["testimonials"]}>
-          <h2>Clients & Testimonials</h2>
-
-          <TestimonialsCarousel />
         </div>
       </div>
 
-      <div className={styles["blog"]}>
-        <h2>Our blog</h2>
+      <div className={styles["testimonials"]}>
+        <h2>Clients & Testimonials</h2>
 
-        <div>
-          <img src={BlogPostImage} alt="blog post" />
-          <h3>Facilisis neque aliquet.</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            porttitor ipsum quisque libero quam ...
-          </p>
-        </div>
-        <div>
-          <img src={BlogPostImage} alt="blog post" />
-          <h3>Facilisis neque aliquet.</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            porttitor ipsum quisque libero quam ...
-          </p>
-        </div>
-        <div>
-          <img src={BlogPostImage} alt="blog post" />
-          <h3>Facilisis neque aliquet.</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-            porttitor ipsum quisque libero quam ...
-          </p>
+        <TestimonialsCarousel />
+      </div>
+
+      <div className={styles["blog"]}>
+        <div className="wrapper">
+          <h2>Our blog</h2>
+
+          <div className={styles.blogPostsPreviews}>
+            <div className={styles.blogPostPreview}>
+              <img src={BlogPostImage} alt="blog post" />
+              <h3>Facilisis neque aliquet.</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                porttitor ipsum quisque libero quam ...
+              </p>
+            </div>
+            <div className={styles.blogPostPreview}>
+              <img src={BlogPostImage} alt="blog post" />
+              <h3>Facilisis neque aliquet.</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                porttitor ipsum quisque libero quam ...
+              </p>
+            </div>
+            <div className={styles.blogPostPreview}>
+              <img src={BlogPostImage} alt="blog post" />
+              <h3>Facilisis neque aliquet.</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                porttitor ipsum quisque libero quam ...
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className={styles["faq"]}>
-        <h2>FAQ</h2>
-        <FaqAccordion />
+        <div className="wrapper">
+          <h2>FAQ</h2>
+          <FaqAccordion />
+        </div>
       </div>
 
       <div className={styles["form"]}>
-        <h2>Large Contact form</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing ementum et augue?
-        </p>
+        <div className={styles.formContainer}>
+          <div className="wrapper">
+            <h2>Large Contact form</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing ementum et
+              augue?
+            </p>
 
-        <ContactForm />
+            <ContactForm />
+          </div>
+        </div>
       </div>
       <Footer />
     </div>

@@ -3,6 +3,8 @@
 }
 
 .accordionButton {
+  display: flex;
+  justify-content: space-between;
   cursor: pointer;
   font-size: 16px;
   line-height: 22px;
