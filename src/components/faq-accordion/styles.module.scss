@@ -9,7 +9,7 @@
   font-size: 16px;
   line-height: 22px;
   font-weight: 600;
-  color: hsl(188deg, 84%, 29%, 1);
+  color: var(--color-dark);
   background-color: white;
   padding: 24px 20px;
   box-shadow: none;
@@ -27,11 +27,15 @@
     margin-left: 24px;
     font-size: 32px;
     font-weight: 400;
-    color: hls(188deg, 84%, 29%, 1);
+    color: hsl(188deg, 84%, 29%, 1);
     border: 1px solid hsl(188deg, 84%, 29%, 1);
     width: 40px;
     height: 40px;
     border-radius: 50%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 22px;
   }
 }
 
@@ -44,11 +48,17 @@
 
   p {
     margin: 0;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 18px;
+      line-height: 26px;
+    }
   }
 }
 
 .expandedButton {
   background-color: hsl(185deg, 55%, 96%, 1);
+  color: hsl(188deg, 84%, 29%, 1);
 
   &::after {
     content: "-";
