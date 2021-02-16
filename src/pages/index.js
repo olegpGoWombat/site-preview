@@ -1,4 +1,7 @@
 import React from "react"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
+import BackgroundImage from "gatsby-background-image"
 
 //assets
 import styles from "./styles.module.scss"
@@ -20,7 +23,6 @@ import CoffeeIcon from "../assets/svg/coffee.svg"
 import ArrowRightIcon from "../assets/svg/arrow-right.svg"
 
 import Timeline from "../assets/images/About-timeline.png"
-import BlogPostImage from "../assets/images/blogpost-image.jpg"
 import AboutImgPlaceholder from "../assets/images/about-img-placeholder.png"
 
 // components
@@ -31,7 +33,9 @@ import ExpertiseCarousel from "../components/expertise-carousel"
 import FaqAccordion from "../components/faq-accordion"
 import ContactForm from "../components/contact-form/contact-form"
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const rdTeamImages = data.rdTeamImages.nodes
+
   return (
     <div className={styles.main}>
       <div className={styles["welcome"]}>
@@ -214,11 +218,19 @@ const IndexPage = () => {
         <div className="wrapper">
           <div className={styles.aboutContainer}>
             <div className={styles.aboutPhotoContainer}>
-              <img src={AboutImgPlaceholder} alt="about" />
+              <img
+                className={styles.aboutUsImage}
+                src={AboutImgPlaceholder}
+                alt="about"
+              />
             </div>
             <div className={styles.aboutTextContainer}>
               <h2>About company</h2>
-              <img src={Timeline} alt="timeline" />
+              {/* <img src={Timeline} alt="timeline" /> */}
+              <Img
+                fluid={data.aboutUsYears.childImageSharp.fluid}
+                alt="years"
+              />
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque
                 iaculis non interdum praesent fames turpis elit proin. Sagittis
@@ -252,22 +264,34 @@ const IndexPage = () => {
           </div>
 
           <div className={styles.ideaCards}>
-            <div className={styles["ideaCard"]}>
+            <BackgroundImage
+              fluid={rdTeamImages[0].childImageSharp.fluid}
+              className={styles.ideaCard}
+            >
               <h3>Computer vision</h3>
               <ArrowIcon />
-            </div>
-            <div className={styles["ideaCard"]}>
+            </BackgroundImage>
+            <BackgroundImage
+              fluid={rdTeamImages[1].childImageSharp.fluid}
+              className={styles.ideaCard}
+            >
               <h3>Data science</h3>
               <ArrowIcon />
-            </div>
-            <div className={styles["ideaCard"]}>
+            </BackgroundImage>
+            <BackgroundImage
+              fluid={rdTeamImages[2].childImageSharp.fluid}
+              className={styles.ideaCard}
+            >
               <h3>Machine Learning</h3>
               <ArrowIcon />
-            </div>
-            <div className={styles["ideaCard"]}>
+            </BackgroundImage>
+            <BackgroundImage
+              fluid={rdTeamImages[3].childImageSharp.fluid}
+              className={styles.ideaCard}
+            >
               <h3>ETL pipelines</h3>
               <ArrowIcon />
-            </div>
+            </BackgroundImage>
           </div>
         </div>
       </div>
@@ -316,12 +340,18 @@ const IndexPage = () => {
 
       <div className={styles["meetUs"]}>
         <div className="wrapper">
-          <div className={styles["meetPhoto"]}>
-            <div>
-              <CoffeeIcon />
-            </div>
-            <h3>Meet us</h3>
-            <p>We still believe that offline meetings matter</p>
+          <div className={styles.meetUsContainer}>
+            <BackgroundImage
+              fluid={data.meetUsImg.childImageSharp.fluid}
+              className={styles.meetPhoto}
+            >
+              <div>
+                <CoffeeIcon />
+              </div>
+              <h3>Meet us</h3>
+              <p>We still believe that offline meetings matter</p>
+            </BackgroundImage>
+
             <div className={styles.meetUsContent}>
               <h2>
                 Have you ever seen a real wombat?
@@ -358,7 +388,10 @@ const IndexPage = () => {
 
           <div className={styles.blogPostsPreviews}>
             <div className={styles.blogPostPreview}>
-              <img src={BlogPostImage} alt="blog post" />
+              <Img
+                fluid={data.blogPostImg.childImageSharp.fluid}
+                alt="blog post"
+              />
               <h3>Facilisis neque aliquet.</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
@@ -366,7 +399,10 @@ const IndexPage = () => {
               </p>
             </div>
             <div className={styles.blogPostPreview}>
-              <img src={BlogPostImage} alt="blog post" />
+              <Img
+                fluid={data.blogPostImg.childImageSharp.fluid}
+                alt="blog post"
+              />
               <h3>Facilisis neque aliquet.</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
@@ -374,7 +410,10 @@ const IndexPage = () => {
               </p>
             </div>
             <div className={styles.blogPostPreview}>
-              <img src={BlogPostImage} alt="blog post" />
+              <Img
+                fluid={data.blogPostImg.childImageSharp.fluid}
+                alt="blog post"
+              />
               <h3>Facilisis neque aliquet.</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
@@ -393,7 +432,14 @@ const IndexPage = () => {
       </div>
 
       <div className={styles["form"]}>
-        <div className={styles.formContainer}>
+        <BackgroundImage
+          fluid={data.contactFormBg.childImageSharp.fluid}
+          className={styles.formContainer}
+          style={{
+            backgroundSize: "initial",
+            backgroundPosition: "right center",
+          }}
+        >
           <div className="wrapper">
             <h2>Large Contact form</h2>
             <p>
@@ -403,7 +449,7 @@ const IndexPage = () => {
 
             <ContactForm />
           </div>
-        </div>
+        </BackgroundImage>
       </div>
       <Footer />
     </div>
@@ -411,3 +457,60 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+// export const query = graphql`
+//   {
+//     images: allFile(filter: { sourceInstanceName: { eq: "images" } }) {
+//       nodes {
+//         childImageSharp {
+//           fluid {
+//             ...GatsbyImageSharpFluid
+//             originalName
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
+
+export const query = graphql`
+  {
+    aboutUsYears: file(relativePath: { eq: "About-timeline.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 720) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    contactFormBg: file(relativePath: { eq: "contact-form-bg.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    blogPostImg: file(relativePath: { eq: "blogpost-image.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 350) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    meetUsImg: file(relativePath: { eq: "meet-us.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 900) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    rdTeamImages: allFile(filter: { name: { regex: "/^rd-team/" } }) {
+      nodes {
+        childImageSharp {
+          fluid(maxWidth: 280) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
+    }
+  }
+`

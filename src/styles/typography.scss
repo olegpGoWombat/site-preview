@@ -73,4 +73,26 @@ h2 {
   font-family: "Futura New";
   font-size: 32px;
   font-weight: 600;
+
+  @media screen and (min-width: 768px) {
+    font-size: 44px;
+    line-height: 48px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 52px;
+    line-height: 54px;
+  }
+}
+
+p {
+  font-size: 14px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 18px;
+  }
 }

@@ -1,41 +1,47 @@
 import React from "react"
-
-// import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
-import { Carousel } from "react-responsive-carousel"
-
-import expertise1 from "../../assets/images/expertise1.jpg"
-import expertise2 from "../../assets/images/expertise2.jpg"
-import expertise3 from "../../assets/images/expertise3.jpg"
-import expertise4 from "../../assets/images/expertise4.jpg"
-import expertise5 from "../../assets/images/expertise5.jpg"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import styles from "./styles.module.scss"
 
+const expertiseTitles = [
+  "Manufacturing & Logistics",
+  "Travel & Hospitality",
+  "Oil and Gas",
+  "HealthTech",
+  "AdTech",
+]
+
 const ExpertiseCarousel = () => {
+  const data = useStaticQuery(graphql`
+    {
+      expertiseImages: allFile(filter: { name: { regex: "/^expertise/" } }) {
+        nodes {
+          childImageSharp {
+            id
+            fluid(maxWidth: 210) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <div className={styles["expertiseCarousel"]}>
-      <Carousel showArrows={false} showIndicators={false} showThumbs={false}>
-        <div className={styles["expertiseItem"]}>
-          <span>Manufacturing & Logistics</span>
-          <img src={expertise1} width="140" alt="exp1" />
-        </div>
-        <div className={styles["expertiseItem"]}>
-          <span>Manufacturing & Logistics</span>
-          <img src={expertise1} width="140" alt="exp1" />
-        </div>
-        <div className={styles["expertiseItem"]}>
-          <span>Manufacturing & Logistics</span>
-          <img src={expertise1} width="140" alt="exp1" />
-        </div>
-        <div className={styles["expertiseItem"]}>
-          <span>Manufacturing & Logistics</span>
-          <img src={expertise1} width="140" alt="exp1" />
-        </div>
-        <div className={styles["expertiseItem"]}>
-          <span>Manufacturing & Logistics</span>
-          <img src={expertise1} width="140" alt="exp1" />
-        </div>
-      </Carousel>
+      {data.expertiseImages.nodes.map((expertiseImage, i) => {
+        const {
+          childImageSharp: { id, fluid },
+        } = expertiseImage
+
+        return (
+          <div key={id} className={styles["expertiseItem"]}>
+            <span>{expertiseTitles[i]}</span>
+            <Img fluid={fluid} alt="expertise" />
+          </div>
+        )
+      })}
     </div>
   )
 }
