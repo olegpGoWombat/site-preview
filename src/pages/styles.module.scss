@@ -12,24 +12,6 @@
 //   @include interpolate(margin-top, 320px, 1024px, 200px, 600px);
 // }
 
-// <div className={styles.wombatCardDecoElement} />
-// .wombatCardDecoElement {
-//   display: none;
-//   height: 692px;
-//   width: 480px;
-//   background-image: url("../assets/images/wombat-card-deco-element.png");
-//   background-repeat: no-repeat;
-
-//   @media screen and (min-width: 1280px) {
-//     display: initial;
-//     position: absolute;
-//     top: -40px;
-//     right: -442px;
-//     z-index: 40;
-//     transform: rotate(7deg);
-//   }
-// }
-
 h2 {
   text-align: center;
 
