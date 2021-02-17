@@ -12,6 +12,24 @@
 //   @include interpolate(margin-top, 320px, 1024px, 200px, 600px);
 // }
 
+// <div className={styles.wombatCardDecoElement} />
+// .wombatCardDecoElement {
+//   display: none;
+//   height: 692px;
+//   width: 480px;
+//   background-image: url("../assets/images/wombat-card-deco-element.png");
+//   background-repeat: no-repeat;
+
+//   @media screen and (min-width: 1280px) {
+//     display: initial;
+//     position: absolute;
+//     top: -40px;
+//     right: -442px;
+//     z-index: 40;
+//     transform: rotate(7deg);
+//   }
+// }
+
 h2 {
   text-align: center;
 
@@ -24,13 +42,26 @@ h2 {
   }
 }
 
+.main {
+  position: relative;
+  overflow-x: hidden;
+}
+
 .welcome {
   padding: 30px 20px 200px;
   height: 100vh;
-  background: linear-gradient(90deg, #0d5563 0%, #12798a 100%);
+  background: url("../assets/images/welcome-screen-stripes-bg-mobile.png"),
+    linear-gradient(90deg, #0d5563 0%, #12798a 100%);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 376px) {
+    background: url("../assets/images/welcome-screen-stripes-bg.png") right top,
+      linear-gradient(90deg, #0d5563 0%, #12798a 100%);
+    background-position: right top;
+    background-repeat: no-repeat;
     padding: 40px 64px;
     text-align: left;
   }
@@ -83,6 +114,7 @@ h2 {
 }
 
 .differentContainer {
+  // position: relative;
   max-width: 1370px;
   margin: 0 auto;
   color: white;
@@ -109,14 +141,47 @@ h2 {
     background-position: 32px 100px;
   }
 
-  // @media screen and (min-width: 1280px) {}
-
-  @media screen and (min-width: 1370px) {
+  @media screen and (min-width: 1360px) {
+    position: relative;
+    z-index: 640;
     margin-bottom: -100px;
     transform: translateY(-100px);
     border-radius: 8px;
     background-position: 64px 100px;
     box-shadow: 10px 10px 80px rgba(0, 37, 40, 0.1);
+  }
+
+  .decoElementRight {
+    display: none;
+    width: 818px;
+    height: 347px;
+    background-image: url("../assets/images/welcome-screen-bg-fragment.png");
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 1360px) {
+      display: initial;
+      position: absolute;
+      z-index: 99;
+      top: -78px;
+      right: -290px;
+    }
+  }
+
+  .decoElementLeft {
+    display: none;
+    height: 900px;
+    width: 600px;
+
+    background-image: url("../assets/images/welcome-screen-bg-fragment-2.png");
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 1360px) {
+      display: initial;
+      position: absolute;
+      z-index: -2;
+      top: -540px;
+      left: -445px;
+    }
   }
 
   & > div {
@@ -402,12 +467,32 @@ h2 {
     padding-bottom: 30px;
   }
 
+  .techstackDecoElement {
+    display: none;
+    background: url("../assets/images/we-think-with-bg-left-pattern.png");
+    background-repeat: no-repeat;
+
+    width: 700px;
+    height: 888px;
+    // transform: rotate(-20deg);
+
+    @media screen and (min-width: 1280px) {
+      display: initial;
+      position: absolute;
+      z-index: -10;
+      top: 280px;
+      left: -480px;
+    }
+  }
+
   h2 {
     margin-bottom: 32px;
     color: var(--color-dark);
   }
 
   .technologies {
+    z-index: 102;
+
     @media screen and (min-width: 576px) {
       display: grid;
       grid-gap: 24px;
@@ -420,6 +505,7 @@ h2 {
     }
 
     @media screen and (min-width: 1280px) {
+      position: relative;
       grid-gap: 30px;
     }
   }
@@ -452,7 +538,6 @@ h2 {
 
         svg {
           transform: scale(1.1);
-          // margin-top: 48px;
           margin-bottom: 24px;
         }
       }
@@ -557,8 +642,27 @@ h2 {
     padding: 0px 64px 24px;
   }
 
+  .adviceDecoElement {
+    display: none;
+    background-image: url("../assets/images/we-think-with-bg-right-pattern.png");
+    background-repeat: no-repeat;
+
+    width: 700px;
+    height: 731px;
+
+    @media screen and (min-width: 1280px) {
+      display: initial;
+      position: absolute;
+      z-index: 1;
+      top: -244px;
+      right: -470px;
+      transform: rotate(8deg);
+    }
+  }
+
   .adviceContainer {
     position: relative;
+    z-index: 20;
     padding: 48px 0;
     height: 570px;
     background-color: var(--color-dark);
@@ -701,6 +805,27 @@ h2 {
     @media screen and (min-width: 1024px) {
       grid-column-gap: 30px;
     }
+
+    @media screen and (min-width: 1280px) {
+      position: relative;
+    }
+  }
+
+  .wombatCardDecoElement {
+    display: none;
+    height: 692px;
+    width: 480px;
+    background-image: url("../assets/images/wombat-card-deco-element.png");
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 1280px) {
+      display: initial;
+      position: absolute;
+      top: -40px;
+      right: -442px;
+      z-index: 40;
+      transform: rotate(7deg);
+    }
   }
 
   .anotherBusinessTitle {
@@ -834,6 +959,10 @@ h2 {
     background: linear-gradient(-90deg, #0d5563 0%, #12798a 100%);
   }
 
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 160px;
+  }
+
   @media screen and (min-width: 1360px) {
     background: transparent;
     @include interpolate(height, 1360px, 1920px, 700px, 900px);
@@ -953,6 +1082,42 @@ h2 {
     text-align: left;
   }
 
+  .rdteamDecoElement {
+    display: none;
+    height: 683px;
+    width: 638px;
+
+    background-image: url("../assets/images/rdTeam-deco-element.png");
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 1280px) {
+      display: initial;
+      position: absolute;
+      top: -609px;
+      right: -480px;
+      z-index: 42;
+      transform: rotate(14deg);
+    }
+  }
+
+  .rdteamDecoElementBottom {
+    display: none;
+    height: 466px;
+    width: 760px;
+
+    background-image: url("../assets/images/rdTeam-deco-element-bottom.png");
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 1280px) {
+      display: initial;
+      position: absolute;
+      bottom: -477px;
+      right: -540px;
+      z-index: 42;
+      transform: rotate(4deg);
+    }
+  }
+
   h2 {
     margin-bottom: 32px;
   }
@@ -1017,6 +1182,8 @@ h2 {
 
     @media screen and (min-width: 1280px) {
       grid-gap: 30px;
+
+      position: relative;
     }
   }
 
@@ -1046,19 +1213,6 @@ h2 {
       line-height: 1;
       font-weight: 600;
     }
-
-    // &:nth-child(1) {
-    //   background-image: url("../assets/images/comp-vision.jpg");
-    // }
-    // &:nth-child(2) {
-    //   background-image: url("../assets/images/data-science.jpg");
-    // }
-    // &:nth-child(3) {
-    //   background-image: url("../assets/images/machine-learning.jpg");
-    // }
-    // &:nth-child(4) {
-    //   background-image: url("../assets/images/etl-pipelines.jpg");
-    // }
   }
 }
 
@@ -1073,9 +1227,36 @@ h2 {
     padding-right: 64px;
   }
 
+  @media screen and (min-width: 1280px) {
+    margin-top: 200px;
+  }
+
+  @media screen and (min-width: 1800px) {
+    position: relative;
+  }
+
+  .awardsDecoElement {
+    display: none;
+    height: 878px;
+    width: 732px;
+
+    background-image: url("../assets/images/awards-deco-element-left.png");
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 1800px) {
+      display: initial;
+      position: absolute;
+      top: -105px;
+      left: -300px;
+      z-index: 42;
+      transform: rotate(-14deg);
+    }
+  }
+
   h2 {
     color: white;
     margin-bottom: 64px;
+    text-align: center;
   }
 
   .awardItems {
@@ -1181,6 +1362,11 @@ h2 {
     transform: translateY(-330px);
     border-radius: 12px;
     box-shadow: 10px 10px 60px rgba(0, 37, 40, 0.1);
+
+    @media screen and (min-width: 1280px) {
+      position: relative;
+      z-index: 5;
+    }
 
     @media screen and (min-width: 1360px) {
       display: grid;
@@ -1375,9 +1561,49 @@ h2 {
     margin-top: 160px;
   }
 
+  @media screen and (min-width: 1280px) {
+    position: relative;
+  }
+
+  .testimonialsDecoElement {
+    display: none;
+    height: 1061px;
+    width: 2296px;
+
+    background-image: url("../assets/images/testimonials-deco-bg-element.png");
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 1280px) {
+      display: initial;
+      position: absolute;
+      top: -700px;
+      left: -304px;
+      z-index: 1;
+    }
+  }
+
+  .testimonialsDecoElementBottom {
+    display: none;
+    height: 755px;
+    width: 784px;
+
+    background-image: url("../assets/images/testimonials-deco-bg-element-bottom.png");
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 1280px) {
+      display: initial;
+      position: absolute;
+      bottom: -272px;
+      right: -250px;
+      z-index: 1;
+      transform: rotate(-11deg);
+    }
+  }
+
   h2 {
     margin-bottom: 40px;
     text-align: center;
+    z-index: 2;
   }
 }
 
@@ -1474,6 +1700,28 @@ h2 {
     padding-right: 64px;
   }
 
+  @media screen and (min-width: 1280px) {
+    position: relative;
+  }
+
+  .faqDecoElement {
+    display: none;
+    height: 902px;
+    width: 881px;
+
+    background-image: url("../assets/images/faq-deco-element.png");
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 1280px) {
+      display: initial;
+      position: absolute;
+      top: -200px;
+      left: -840px;
+      z-index: 1;
+      // transform: rotate(-11deg);
+    }
+  }
+
   h2 {
     margin-bottom: 48px;
     text-align: center;
@@ -1506,6 +1754,27 @@ h2 {
     border-radius: 10px;
     transform: translateY(120px);
     margin-top: -120px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    position: relative;
+  }
+
+  .largeFormDecoElement {
+    display: none;
+    height: 768px;
+    width: 547px;
+
+    background-image: url("../assets/images/large-form-deco-element.png");
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 1600px) {
+      display: initial;
+      position: absolute;
+      top: 0;
+      right: -420px;
+      z-index: 10;
+    }
   }
 
   .formContainer {

@@ -45,14 +45,14 @@ const IndexPage = ({ data }) => {
           <h1>Lorem ipsum amet, consectetur adipiscing</h1>
           <p>Leo cursus enim luctus praesent ut ut nunc magna.</p>
 
-          <button type="button" onClick={() => {}}>
-            Static text
-          </button>
+          <button type="button">Static text</button>
         </div>
       </div>
 
       <div className={styles["different"]}>
         <div className={styles.differentContainer}>
+          <div className={styles.decoElementRight} />
+          <div className={styles.decoElementLeft} />
           <div className="wrapper">
             <div className={styles.differentTitle}>
               <h2>Why we are different</h2>
@@ -131,6 +131,7 @@ const IndexPage = ({ data }) => {
 
           <div className={styles.technologies}>
             <div className={styles.technology}>
+              <div className={styles.techstackDecoElement} />
               <PythonIcon />
               <h4>Python +text Python is the new sexy.</h4>
               <p>
@@ -169,6 +170,7 @@ const IndexPage = ({ data }) => {
       <div className={styles["advice"]}>
         <div className="wrapper">
           <div className={styles.adviceContainer}>
+            <div className={styles.adviceDecoElement} />
             <h2>
               Your project can be
               <br />
@@ -192,6 +194,7 @@ const IndexPage = ({ data }) => {
           <ExpertiseCarousel />
 
           <div className={styles.anotherBusiness}>
+            <div className={styles.wombatCardDecoElement} />
             <div className={styles.anotherBusinessTitle}>
               <h2>Having a business in another field?</h2>
               <h4>We're always open to smth new.</h4>
@@ -264,6 +267,8 @@ const IndexPage = ({ data }) => {
           </div>
 
           <div className={styles.ideaCards}>
+            <div className={styles.rdteamDecoElement} />
+            <div className={styles.rdteamDecoElementBottom} />
             <BackgroundImage
               fluid={rdTeamImages[0].childImageSharp.fluid}
               className={styles.ideaCard}
@@ -297,6 +302,7 @@ const IndexPage = ({ data }) => {
       </div>
 
       <div className={styles["awards"]}>
+        <div className={styles.awardsDecoElement} />
         <div className="wrapper">
           <h2>Our Awards and benefits</h2>
 
@@ -377,6 +383,8 @@ const IndexPage = ({ data }) => {
       </div>
 
       <div className={styles["testimonials"]}>
+        <div className={styles.testimonialsDecoElement} />
+        <div className={styles.testimonialsDecoElementBottom} />
         <h2>Clients & Testimonials</h2>
 
         <TestimonialsCarousel />
@@ -425,6 +433,7 @@ const IndexPage = ({ data }) => {
       </div>
 
       <div className={styles["faq"]}>
+        <div className={styles.faqDecoElement} />
         <div className="wrapper">
           <h2>FAQ</h2>
           <FaqAccordion />
@@ -432,6 +441,8 @@ const IndexPage = ({ data }) => {
       </div>
 
       <div className={styles["form"]}>
+        <div className={styles.largeFormDecoElement} />
+
         <BackgroundImage
           fluid={data.contactFormBg.childImageSharp.fluid}
           className={styles.formContainer}
@@ -478,28 +489,28 @@ export const query = graphql`
     aboutUsYears: file(relativePath: { eq: "About-timeline.png" }) {
       childImageSharp {
         fluid(maxWidth: 720) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     contactFormBg: file(relativePath: { eq: "contact-form-bg.png" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     blogPostImg: file(relativePath: { eq: "blogpost-image.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 350) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     meetUsImg: file(relativePath: { eq: "meet-us.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 900) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
@@ -507,7 +518,7 @@ export const query = graphql`
       nodes {
         childImageSharp {
           fluid(maxWidth: 280) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }

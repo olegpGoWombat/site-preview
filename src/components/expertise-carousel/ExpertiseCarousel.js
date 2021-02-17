@@ -20,7 +20,7 @@ const ExpertiseCarousel = () => {
           childImageSharp {
             id
             fluid(maxWidth: 210) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
